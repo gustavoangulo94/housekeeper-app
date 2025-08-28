@@ -1,0 +1,149 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Aircasa Design Tokens
+   * Inspired by Airbnb's visual language
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+  */
+  :root {
+    /* Aircasa Core Tokens */
+    --ac-accent: 347 100% 61%; /* #FF385C - Airbnb coral */
+    --ac-fg: 0 0% 13%; /* #222222 - Primary text */
+    --ac-muted: 220 9% 46%; /* #6B7280 - Secondary text */
+    --ac-bg: 0 0% 100%; /* #FFFFFF - Primary background */
+    --ac-bg-alt: 210 20% 98%; /* #F9FAFB - Secondary background */
+    --ac-border: 220 13% 91%; /* #E5E7EB - Border color */
+    --ac-radius: 16px;
+    --ac-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+
+    /* Standard theme variables mapped to Aircasa tokens */
+    --background: var(--ac-bg);
+    --foreground: var(--ac-fg);
+
+    --card: var(--ac-bg);
+    --card-foreground: var(--ac-fg);
+
+    --popover: var(--ac-bg);
+    --popover-foreground: var(--ac-fg);
+
+    --primary: var(--ac-accent);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--ac-bg-alt);
+    --secondary-foreground: var(--ac-fg);
+
+    --muted: var(--ac-bg-alt);
+    --muted-foreground: var(--ac-muted);
+
+    --accent: var(--ac-accent);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: var(--ac-border);
+    --input: var(--ac-border);
+    --ring: var(--ac-accent);
+
+    --radius: var(--ac-radius);
+
+    /* Sidebar tokens */
+    --sidebar-background: var(--ac-bg-alt);
+    --sidebar-foreground: var(--ac-fg);
+    --sidebar-primary: var(--ac-accent);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--ac-bg);
+    --sidebar-accent-foreground: var(--ac-fg);
+    --sidebar-border: var(--ac-border);
+    --sidebar-ring: var(--ac-accent);
+  }
+
+  .dark {
+    /* Aircasa Dark Mode Tokens */
+    --ac-bg: 0 0% 7%; /* Dark background */
+    --ac-bg-alt: 0 0% 12%; /* Dark secondary background */
+    --ac-fg: 0 0% 95%; /* Light text on dark */
+    --ac-muted: 220 9% 65%; /* Lighter muted text */
+    --ac-border: 0 0% 20%; /* Dark border */
+
+    --background: var(--ac-bg);
+    --foreground: var(--ac-fg);
+
+    --card: var(--ac-bg-alt);
+    --card-foreground: var(--ac-fg);
+
+    --popover: var(--ac-bg-alt);
+    --popover-foreground: var(--ac-fg);
+
+    --primary: var(--ac-accent);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--ac-bg-alt);
+    --secondary-foreground: var(--ac-fg);
+
+    --muted: var(--ac-bg-alt);
+    --muted-foreground: var(--ac-muted);
+
+    --accent: var(--ac-accent);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: var(--ac-border);
+    --input: var(--ac-border);
+    --ring: var(--ac-accent);
+
+    --sidebar-background: var(--ac-bg);
+    --sidebar-foreground: var(--ac-fg);
+    --sidebar-primary: var(--ac-accent);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--ac-bg-alt);
+    --sidebar-accent-foreground: var(--ac-fg);
+    --sidebar-border: var(--ac-border);
+    --sidebar-ring: var(--ac-accent);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+  }
+
+  .font-bold {
+    font-weight: 800;
+  }
+
+  /* Aircasa utility classes */
+  .ac-shadow {
+    box-shadow: var(--ac-shadow);
+  }
+
+  .ac-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .ac-container {
+      padding: 0 2rem;
+    }
+  }
+}
